@@ -22,6 +22,9 @@ gem 'shotgun'
 
 gem 'bcrypt'
 
+# Magic the Gathering SDK for Ruby
+gem 'mtg_sdk'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
