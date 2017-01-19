@@ -1,3 +1,3 @@
 class Card < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :card_id, presence: true
 end
