@@ -35,7 +35,15 @@ get '/decks/:id/edit' do
 end
 
 put '/decks/:id' do
-  'put'
+  @deck = Deck.find_by_id params[:id]
+  redirect '/decks' unless @deck
+  @deck.assign_attributes params[:deck]
+  if @deck.save
+    redirect "decks/#{@deck.id}"
+  else
+    @errors = @deck.errors.full_messages
+    erb :"decks/#{@deck.id}/edit"
+  end
 end
 
 delete '/decks/:id' do

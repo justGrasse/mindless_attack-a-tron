@@ -3,7 +3,7 @@
 <form id='new-deck-form' method='post' action='/decks/<%= @deck.id %>'>
   <input type="hidden" name="_method" value='PUT'>
   <label for='deck-name'>name:</label>
-  <input id='deck-name' type="text" name="deck[name]" value=<%= html_escaper @deck.name %>>
+  <input id='deck-name' type="text" name="deck[name]" value='<%= html_escaper @deck.name %>'>
 
   <label for='deck-description'>description:</label>
   <textarea id='deck-description' name="deck[description]"><%= html_escaper @deck.description %></textarea>
