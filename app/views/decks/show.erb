@@ -1,0 +1,10 @@
+<div id='show-deck-container'>
+  <h3 id='show-deck-name'><%= @deck.name %></h3>
+  <p id='show-deck-description'>description: <%= @deck.description %></p>
+  <div id='show-decks-cards-container'>
+    <h4>cards:</h4>
+    <% @deck.cards.each do |card| %>
+      <%= erb :'cards/_card', locals: { card: card } %>
+    <% end %>
+  </div>
+</div>
