@@ -17,9 +17,18 @@ post '/decks' do
 end
 
 get '/decks/:id' do
-  @deck = Deck.find params[:id]
+  @deck = Deck.find_by_id params[:id]
   if @deck
     erb :'decks/show'
+  else
+    redirect :'/decks'
+  end
+end
+
+get '/decks/:id/edit' do
+  @deck = Deck.find_by_id params[:id]
+  if @deck
+    erb :"decks/edit"
   else
     redirect :'/decks'
   end
