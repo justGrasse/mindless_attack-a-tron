@@ -47,5 +47,7 @@ put '/decks/:id' do
 end
 
 delete '/decks/:id' do
-  'delete'
+  @deck = Deck.find_by_id params[:id]
+  @deck.destroy if @deck
+  redirect '/decks'
 end
