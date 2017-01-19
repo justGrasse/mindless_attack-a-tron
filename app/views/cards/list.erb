@@ -1,0 +1,10 @@
+<div class='card-container'>
+  <div class='card-type-container'>
+    <h4>creatures (<%= deck.cards_by_type('Creature').count %>):</h4>
+    <ul class='card-list'>
+    <% deck.cards_by_type('Creature').each do |card| %>
+      <li class='card-name'><a href="/cards/<%= card.id %>"><%= card.name %></a></li>
+    <% end %>
+    </ul>
+  </div>
+</div>
