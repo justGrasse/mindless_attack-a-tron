@@ -1,0 +1,3 @@
+<% Deck.all.each do |deck| %>
+  <%= erb :'decks/_deck', locals: { deck: deck } %>
+<% end %>

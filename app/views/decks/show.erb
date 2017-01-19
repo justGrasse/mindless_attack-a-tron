@@ -1,0 +1,18 @@
+<div id='show-deck-container'>
+  <h3 id='show-deck-name'><%= @deck.name %></h3>
+  <p id='show-deck-description'>description: <%= html_escaper @deck.description %></p>
+  <div id='show-decks-cards-container'>
+    <h4>cards:</h4>
+    <% @deck.cards.each do |card| %>
+      <%= erb :'cards/_card', locals: { card: card } %>
+    <% end %>
+  </div>
+
+  <form class='edit-deck-button' method="GET" action="/decks/<%= @deck.id %>/edit">
+    <input type="submit" value="edit">
+  </form>
+  <form class='delete-deck-button' method="POST" action="/decks/<%= @deck.id %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete">
+  </form>
+</div>
