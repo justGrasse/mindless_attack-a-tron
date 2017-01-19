@@ -1,0 +1,1 @@
+require 'mtg_sdk'
