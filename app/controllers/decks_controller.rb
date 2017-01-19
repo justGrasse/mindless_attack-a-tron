@@ -34,4 +34,10 @@ get '/decks/:id/edit' do
   end
 end
 
+put '/decks/:id' do
+  'put'
+end
 
+delete '/decks/:id' do
+  'delete'
+end
