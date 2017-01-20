@@ -4,6 +4,8 @@ class Card < ActiveRecord::Base
 
   validates :card_id, presence: true
 
+
+
   def name
     card_data.name
   end
