@@ -1,0 +1,5 @@
+<div class='show-card-container'>
+  <h4><%= html_escaper(@card.name) %></h4>
+  <img src="<%= html_escaper(@card.image_url) %>">
+  <p>Number of Decks using <%= html_escaper(@card.name) %>: <%= html_escaper(@card.decks.count) %></p>
+</div>
