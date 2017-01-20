@@ -12,8 +12,7 @@
   end
 
   get '/logout' do
-    session['oauth'] = nil
-    session['access_token'] = nil
+    session_logout
     redirect '/'
   end
 
