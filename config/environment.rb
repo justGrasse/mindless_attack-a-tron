@@ -25,6 +25,7 @@ require 'json'
 # require api libraries
 require 'mtg_sdk'
 require 'koala'
+require 'omniauth'
 
 require 'dotenv/load'
 
@@ -52,3 +53,9 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+#
+class MyApplication < Sinatra::Base
+  use Rack::Session::Cookie
+  use OmniAuth::Strategies::Developer
+end
