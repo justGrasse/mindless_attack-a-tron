@@ -2,10 +2,10 @@ enable :sessions
 
 module SessionHelper
   def session_user
-    User.find_by(access_code: session_access_code) if session_access_code
+    User.find_by(access_code: session_access_token) if session_access_token
   end
 
-  def session_access_code
+  def session_access_token
     session[:access_token]
   end
 
