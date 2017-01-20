@@ -1,3 +1,7 @@
-<% Deck.all.each do |deck| %>
-  <%= erb :'decks/_deck', locals: { deck: deck } %>
-<% end %>
+<div id='deck-list-container'>
+  <h3>list of decks:</h3>
+
+  <% Deck.all.each do |deck| %>
+    <%= erb :'decks/_deck', locals: { deck: deck } %>
+  <% end %>
+</div>
