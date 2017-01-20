@@ -15,12 +15,20 @@
 </head>
 <body>
 
+    <% graph = Koala::Facebook::API.new(session_access_token)%>
+
   <header>
     <nav>
       <h1 id='title-heading'>mindless-attackaton</h1>
       <ul>
         <li><a class='nav-link' href="/decks">decks list</a></li>
         <li><a class='nav-link' href="/decks/new">make a deck</a></li>
+        <% if session_access_token %>
+          <li><a class='nav-link' href="/logout">logout</a></li>
+          <li><%= graph.get_object("me")['name'] %></li>
+        <% else %>
+          <li><a class='nav-link' href="/login">login</a></li>
+        <% end %>
       </ul>
     </nav>
   </header>
@@ -28,6 +36,8 @@
   <main>
 
     <%= yield %>
+
+
 
   </main>
 </body>
