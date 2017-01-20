@@ -13,6 +13,7 @@ body {
 
 nav {
   position: fixed;
+  height: 70px;
   width: 100%;
   top: 0;
   background: darkgray;
@@ -35,4 +36,9 @@ nav li a {
   text-decoration: none;
   color: black;
   font-size: 1.2em;
+}
+
+#title-heading {
+  float: left;
+  margin-left: 20px;
 }
