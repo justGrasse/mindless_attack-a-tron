@@ -22,7 +22,9 @@ require 'erb'
 require 'faker'
 require 'json'
 
+# require api libraries
 require 'mtg_sdk'
+require 'koala'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))

@@ -17,13 +17,14 @@ gem 'activesupport'
 gem 'activerecord',  '~>5.0.1'
 
 gem 'rake'
-
 gem 'shotgun'
-
 gem 'bcrypt'
 
+# Koala: Facebook OAuth and Graph API
+gem "koala", "~> 2.2"
+
 # Magic the Gathering SDK for Ruby
-gem 'mtg_sdk'
+gem 'mtg_sdk', "~> 3.1"
 
 group :test do
   gem 'shoulda-matchers'
