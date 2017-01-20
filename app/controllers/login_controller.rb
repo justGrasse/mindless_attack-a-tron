@@ -13,10 +13,10 @@
 
   get '/logout' do
     session_logout
-    redirect '/'
+    redirect '/decks'
   end
 
   get '/callback' do
     session['access_token'] = session['oauth'].get_access_token(params[:code])
-    redirect '/'
+    redirect '/decks'
   end
