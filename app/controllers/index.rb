@@ -1,3 +1,3 @@
-get '/' do
-  redirect '/decks'
-end
+# get '/' do
+#   redirect '/decks'
+# end
