@@ -20,8 +20,3 @@ class User < ActiveRecord::Base
 
   end
 end
-
-
-t.string :access_token, null: false
-t.string :ouath, null: false
-t.timestamp :expires_at, null: false
