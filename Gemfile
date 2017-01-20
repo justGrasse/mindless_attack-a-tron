@@ -19,6 +19,7 @@ gem 'activerecord',  '~>5.0.1'
 gem 'rake'
 gem 'shotgun'
 gem 'bcrypt'
+gem 'dotenv', "~> 2.1.2"
 
 # Koala: Facebook OAuth and Graph API
 gem "koala", "~> 2.2"
