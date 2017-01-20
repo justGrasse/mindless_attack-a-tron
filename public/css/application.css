@@ -42,3 +42,8 @@ nav li a {
   float: left;
   margin-left: 20px;
 }
+
+#deck-list-container {
+  margin: auto;
+  width: 1000px;
+}
