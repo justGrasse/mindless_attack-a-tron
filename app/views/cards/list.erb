@@ -6,33 +6,33 @@
       <li class='card-name'><a href="/cards/<%= card.id %>"><%= card.name %></a></li>
     <% end %>
     </ul>
-    <h4>sorceries (<%= deck.cards_by_type('Sorceries').count %>):</h4>
+    <h4>sorceries (<%= deck.cards_by_type('Sorcery').count %>):</h4>
     <ul class='card-list'>
-    <% deck.cards_by_type('Sorceries').each do |card| %>
+    <% deck.cards_by_type('Sorcery').each do |card| %>
       <li class='card-name'><a href="/cards/<%= card.id %>"><%= card.name %></a></li>
     <% end %>
     </ul>
-    <h4>instants (<%= deck.cards_by_type('Instants').count %>):</h4>
+    <h4>instants (<%= deck.cards_by_type('Instant').count %>):</h4>
     <ul class='card-list'>
-    <% deck.cards_by_type('Instants').each do |card| %>
+    <% deck.cards_by_type('Instant').each do |card| %>
       <li class='card-name'><a href="/cards/<%= card.id %>"><%= card.name %></a></li>
     <% end %>
     </ul>
-    <h4>artifacts (<%= deck.cards_by_type('Artifacts').count %>):</h4>
+    <h4>artifacts (<%= deck.cards_by_type('Artifact').count %>):</h4>
     <ul class='card-list'>
-    <% deck.cards_by_type('Artifacts').each do |card| %>
+    <% deck.cards_by_type('Artifact').each do |card| %>
       <li class='card-name'><a href="/cards/<%= card.id %>"><%= card.name %></a></li>
     <% end %>
     </ul>
-    <h4>enchantments (<%= deck.cards_by_type('Enchantments').count %>):</h4>
+    <h4>enchantments (<%= deck.cards_by_type('Enchantment').count %>):</h4>
     <ul class='card-list'>
-    <% deck.cards_by_type('Enchantments').each do |card| %>
+    <% deck.cards_by_type('Enchantment').each do |card| %>
       <li class='card-name'><a href="/cards/<%= card.id %>"><%= card.name %></a></li>
     <% end %>
     </ul>
-    <h4>lands (<%= deck.cards_by_type('Lands').count %>):</h4>
+    <h4>lands (<%= deck.cards_by_type('Land').count %>):</h4>
     <ul class='card-list'>
-    <% deck.cards_by_type('Lands').each do |card| %>
+    <% deck.cards_by_type('Land').each do |card| %>
       <li class='card-name'><a href="/cards/<%= card.id %>"><%= card.name %></a></li>
     <% end %>
     </ul>
