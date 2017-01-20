@@ -3,9 +3,7 @@
   <p id='show-deck-description'>description: <%= html_escaper @deck.description %></p>
   <div id='show-decks-cards-container'>
     <h4>cards:</h4>
-    <% @deck.cards.each do |card| %>
-      <%= erb :'cards/_card', locals: { card: card } %>
-    <% end %>
+    <%= erb :'cards/list', locals: { deck: @deck } %>
   </div>
 
   <form class='edit-deck-button' method="GET" action="/decks/<%= @deck.id %>/edit">
