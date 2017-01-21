@@ -2,16 +2,20 @@ enable :sessions
 
 module SessionHelper
   def session_user
-    User.find_by(access_code: session_access_token) if session_access_token
+    User.get(session_user_id) if session_user_id
   end
 
-  def session_access_token
-    session[:access_token]
+  def session_user_id
+    session[:user_id]
+  end
+
+  def session_login(user)
+    return nil unless user
+    session[:id] = user.id
   end
 
   def session_logout
-    session[:oauth] = nil
-    session[:access_token] = nil
+    session.delete(:id)
   end
 end
 

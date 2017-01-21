@@ -24,6 +24,10 @@ gem 'dotenv', "~> 2.1.2"
 # Koala: Facebook OAuth and Graph API
 gem "koala", "~> 2.2"
 
+# OmniAuth
+gem "omniauth", "~> 1.3.2"
+gem "omniauth-facebook"
+
 # Magic the Gathering SDK for Ruby
 gem 'mtg_sdk', "~> 3.1"
 
