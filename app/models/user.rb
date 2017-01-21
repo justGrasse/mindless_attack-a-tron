@@ -12,8 +12,12 @@ class User < ActiveRecord::Base
     graph.get_object("me")['name']
   end
 
+  def facebook_id
+    graph.get_object("me")['id']
+  end
+
   def graph
-    Koala::Facebook::API.new(access_token)
+    Koala::Facebook::API.new(access_token, ENV['APP_SECRET'])
   end
 
   def store_user_data
