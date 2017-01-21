@@ -6,21 +6,18 @@ class User < ActiveRecord::Base
   validates :oauth_id, presence: true
   validates :expires_at, presence: true
 
-  before_validation :store_user_data, on: :create
+  before_validation :get_facebook_id, on: :create
 
   def name
     graph.get_object("me")['name']
-  end
-
-  def facebook_id
-    graph.get_object("me")['id']
   end
 
   def graph
     Koala::Facebook::API.new(access_token, ENV['APP_SECRET'])
   end
 
-  def store_user_data
-
+  def get_facebook_id
+    facebook_id = graph.get_object("me")['id']
   end
+
 end
