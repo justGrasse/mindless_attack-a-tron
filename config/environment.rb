@@ -26,6 +26,7 @@ require 'json'
 require 'mtg_sdk'
 require 'koala'
 require 'omniauth'
+require 'omniauth-facebook'
 
 require 'dotenv/load'
 
@@ -54,8 +55,8 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 
-#
-class MyApplication < Sinatra::Base
-  use Rack::Session::Cookie
-  use OmniAuth::Strategies::Developer
+use Rack::Session::Cookie, secret: 'abc123'
+
+use OmniAuth::Builder do
+  provider :facebook, ENV['APP_ID'], ENV['APP_SECRET']
 end
