@@ -1,0 +1,8 @@
+<div class='card-list-container' class='flex-container'>
+  <h3>card library:</h3>
+  <% Card.all.each do |card| %>
+    <div class='card-container' class='flex-item'>
+      <img src="<%= html_escaper(card.image_url) %>">
+    </div>
+  <% end %>
+</div>
