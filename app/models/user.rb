@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :decks
+  has_many :decks, foreign_key: :creator_id
   has_many :cards, through: :decks
 
   validates :facebook_id, presence: true, uniqueness: true
