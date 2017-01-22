@@ -9,4 +9,10 @@ class Deck < ActiveRecord::Base
     end
   end
 
+  def card_quantity(match_card)
+    matches = cards.select { |card| card == match_card }
+    return nil if matches.empty?
+    matches.count
+  end
+
 end

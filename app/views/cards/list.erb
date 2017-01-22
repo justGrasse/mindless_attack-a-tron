@@ -2,8 +2,13 @@
   <div class='card-type-container'>
     <h4>cards (<%= deck.cards.count %>):</h4>
     <ul class='card-list'>
-    <% deck.cards.each do |card| %>
-      <li class='card-name'><a href="/cards/<%= card.id %>"><%= card.name %></a></li>
+    <% deck.cards.uniq.each do |card| %>
+      <li class='card-name'><a href="/cards/<%= card.id %>">
+        <%= card.name %>
+        <% if deck.card_quantity(card) > 1 %>
+          (<%= deck.card_quantity(card) %>)
+        <% end %>
+      </a></li>
     <% end %>
     </ul>
   </div>
