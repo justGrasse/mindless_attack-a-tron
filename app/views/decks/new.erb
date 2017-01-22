@@ -1,11 +1,15 @@
 <%= erb :'_errors' %>
 
 <form id='new-deck-form' method='post' action='/decks'>
-  <label for='deck-name'>name:</label>
-  <input id='deck-name' type="text" name="deck[name]" value=<%=  %>>
+  <div class='new-deck-input'>
+    <label for='deck-name'>name:</label>
+    <input id='deck-name' type="text" name="deck[name]" value=<%=  %>>
+  </div>
 
-  <label for='deck-description'>description:</label>
-  <textarea id='deck-description' name="deck[description]"><%=  %></textarea>
+  <div class='new-deck-input'>
+    <label for='deck-description'>description:</label>
+    <textarea id='deck-description' name="deck[description]"><%=  %></textarea>
+  </div>
 
-  <input type="submit" value='deck me'>
+  <button class='button'>deck me</button>
 </form>
