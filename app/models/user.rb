@@ -2,21 +2,23 @@ class User < ActiveRecord::Base
   has_many :decks
   has_many :cards, through: :decks
 
+  validates :facebook_id, presence: true, uniqueness: true
   validates :access_token, presence: true
-  validates :oauth_id, presence: true
-  validates :expires_at, presence: true
 
-  before_validation :store_user_data, on: :create
+  before_validation :get_facebook_id, on: :create
 
   def name
     graph.get_object("me")['name']
   end
 
+  private
+
   def graph
-    Koala::Facebook::API.new(access_token)
+    Koala::Facebook::API.new(access_token, ENV['APP_SECRET'])
   end
 
-  def store_user_data
-
+  def get_facebook_id
+    self.facebook_id = graph.get_object("me")['id']
   end
+
 end
