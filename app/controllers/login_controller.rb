@@ -10,17 +10,12 @@ end
 
 get '/callback' do
   access_token = session['oauth'].get_access_token(params[:code])
-  puts 'access_token'
-  p access_token
-  puts 'koala_oauth'
-  p session['oauth']
   graph = Koala::Facebook::API.new(access_token, ENV['APP_SECRET'])
-  puts 'graph'
-  p graph
-
-  user = User.find_or_create_by(access_token: access_token)
+  user = User.find_or_initialize_by(facebook_id: graph.get_object("me")['id'])
+  user.access_token = access_token
+  user.save
   session.delete(:oauth)
-  session.delete(:access_token)
+  session.delete(:code)
   session_login(user)
   redirect '/decks'
 end
