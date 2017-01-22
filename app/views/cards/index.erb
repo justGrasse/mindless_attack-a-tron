@@ -1,6 +1,6 @@
 <div class='card-list-container'>
   <h3>card library:</h3>
-  <tbody>
+  <tbody class='card-table'>
     <td colspan='5' valign='top'>
       <% Card.all.each do |card| %>
         <a href='/cards/<%= card.id %>'><img src="<%= html_escaper(card.image_url) %>"></a>

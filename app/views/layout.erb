@@ -19,15 +19,15 @@
     <nav>
       <h1 id='title-heading'>mindless-attackatron</h1>
       <ul>
-        <li><a class='nav-link' href="/decks">decks list</a></li>
-        <li><a class='nav-link' href="/cards">card library</a></li>
-        <li><a class='nav-link' href="/decks/new">make a deck</a></li>
         <% if session_user %>
-          <li><a class='nav-link' href="/logout">logout</a></li>
           <li><%= session_user.name %></li>
+          <li><a class='nav-link' href="/logout">logout</a></li>
         <% else %>
           <li><a class='nav-link' href="/login">login</a></li>
         <% end %>
+        <li><a class='nav-link' href="/decks">decks list</a></li>
+        <li><a class='nav-link' href="/cards">card library</a></li>
+        <%= '<li><a class="nav-link" href="/decks/new">make a deck</a></li>' if session_user %>
       </ul>
     </nav>
   </header>
