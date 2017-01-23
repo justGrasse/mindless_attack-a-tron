@@ -1,5 +1,5 @@
 get '/login' do
-  session['oauth'] = Koala::Facebook::OAuth.new(ENV['APP_ID'], ENV['APP_SECRET'], "http://localhost:9393/callback")
+  session['oauth'] = Koala::Facebook::OAuth.new(ENV['APP_ID'], ENV['APP_SECRET'], "#{request.base_url}/callback")
   redirect session['oauth'].url_for_oauth_code()
 end
 
@@ -19,4 +19,3 @@ get '/callback' do
   session_login(user)
   redirect '/decks'
 end
-
