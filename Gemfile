@@ -3,9 +3,6 @@ source :rubygems
 # PostgreSQL driver
 gem 'pg'
 
-# SQLite3 driver
-gem 'sqlite3',  '~>1.3.13'
-
 # Sinatra driver
 gem 'sinatra', '~> 1.0'
 gem 'sinatra-contrib'
