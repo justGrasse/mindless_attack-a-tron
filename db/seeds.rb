@@ -1,3 +1,5 @@
+require 'faker'
+
 Deck.delete_all
 Card.delete_all
 DecksCard.delete_all
