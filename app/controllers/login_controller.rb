@@ -1,5 +1,5 @@
 get '/login' do
-  session['oauth'] = Koala::Facebook::OAuth.new(ENV['APP_ID'], ENV['APP_SECRET'], "#{request.base_url}/callback")
+  session['oauth'] = Koala::Facebook::OAuth.new(ENV['APP_ID'], ENV['APP_SECRET'], "http://mindless-attackatron.herokuapp.com/callback")
   redirect session['oauth'].url_for_oauth_code()
 end
 
